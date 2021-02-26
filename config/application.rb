@@ -33,7 +33,7 @@ module RailsPractice
       g.assets false # CSS,JSを自動生成しない
       g.test_framework false # テストを自動生成しない
       g.skip_routes true # ルーティングを自動生成しない
-      
+    end
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
