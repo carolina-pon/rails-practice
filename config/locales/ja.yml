@@ -1,1 +1,11 @@
 ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        age: 年齢
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        password_digest: パスワード(確認)
+         
