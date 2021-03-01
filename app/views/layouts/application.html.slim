@@ -5,7 +5,12 @@ html
       | RailsPractice
     = csrf_meta_tags
     = csp_meta_tag
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    = render 'shared/header'
+    .container.pt-4
+      = render 'shared/flash_messages'
+      main
+      = yield
+      .pb-3
