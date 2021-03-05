@@ -3,6 +3,8 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+// https://techtechmedia.com/font-awesome-rails6/　参考にfont-awesome導入
+import '@fortawesome/fontawesome-free/js/all';
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
@@ -16,3 +18,4 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 import 'bootstrap-material-design'
 import '../stylesheets/application'
+
