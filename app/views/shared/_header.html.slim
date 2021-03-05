@@ -1,16 +1,18 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  = link_to 'Blog App', root_path, class: 'navbar-brand' 
+nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd"
+  = link_to root_path, class: 'navbar-brand' do
+    = 'Blog App'
+    i.fas.fa-cat
   button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
     span.navbar-toggler-icon
   #navbarNavAltMarkup.collapse.navbar-collapse
     .navbar-nav
       - if current_user
         nav-item.nav-link
-          = link_to 'ブログ投稿', root_path
+          = link_to 'ブログ投稿', new_blog_path
         nav-item.nav-link
           = link_to 'ログアウト', logout_path, method: :delete
       - else
         nav-item.nav-link
-          = link_to 'ユーザー登録', root_path
+          = link_to 'ユーザー登録', new_user_path
         nav-item.nav-link
           = link_to 'ログイン', login_path

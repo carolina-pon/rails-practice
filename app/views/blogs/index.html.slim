@@ -1,0 +1,16 @@
+.card
+  ul.list-group.list-group-flush
+    - @blogs.each do |blog|
+     .list-group-item
+        .col
+          = link_to blog.title, blog_path(blog)
+        .col
+          = "by #{blog.user.name}"
+        .col
+          / lメソッドで時刻表記をja.ymlのフォーマットへ
+          = l blog.created_at
+        - if current_user.id == blog.user_id
+          = link_to edit_blog_path(blog) do
+            i.far.fa-edit
+          = link_to blog_path(blog), method: :delete, data: {confirm: '本当に削除しますか？'} do
+            i.far.fa-trash-alt

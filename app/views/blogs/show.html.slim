@@ -1,0 +1,15 @@
+table.table
+  thread.thread-default
+  tbody
+    tr
+      td= @blog.title
+      td= "by #{@blog.user.name}"
+      - if current_user.id == @blog.user_id
+        td= link_to edit_blog_path do
+          i.far.fa-edit
+        td= link_to blog_path,method: :delete, data: {confirm: '本当に削除しますか？'} do
+          i.far.fa-trash-alt
+    tr
+      td= @blog.body
+    tr
+      td= l @blog.created_at
