@@ -1,0 +1,19 @@
+.login-register-form
+  .login-register-form-inner
+    .card.mb-3
+      = form_with model: @blog, class: 'card-body', local: true do |f|
+        = render 'shared/error_messages', object: @blog
+        .form-group
+          = f.label :title, class: 'bmd-label-floating'
+          = f.text_field :title, class: 'form-control'
+        .form-group
+          = f.label :body, class: 'bmd-label-floating'
+          = f.text_area :body, class: 'form-control'
+        .form-group
+          = f.label :status, class: 'bmd-label-floating'
+          / https://pikawaka.com/rails/i18n
+          / https://qiita.com/tomoharutt/items/272a10f4fefb555944f2 この記事参考にenum翻訳
+          = f.select :status, Blog.statuses.keys.map {|k| [I18n.t("enum.blog.status.#{k}"), k]}, {}, class: 'form-control'
+        = f.submit '投稿', class: 'btn btn-raised btn-primary'
+
+        

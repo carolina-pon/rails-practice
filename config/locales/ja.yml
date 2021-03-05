@@ -1,4 +1,7 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
   activerecord:
     attributes:
       user:
@@ -8,4 +11,12 @@ ja:
         password: パスワード
         password_confirmation: パスワード(確認)
         password_digest: パスワード(確認)
-         
+      blog:
+        title: タイトル
+        body: 内容
+        status: ステータス
+  enum:
+    blog:
+      status: 
+        published: 公開
+        unpublished: 非公開
